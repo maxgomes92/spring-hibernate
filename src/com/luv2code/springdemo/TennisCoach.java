@@ -1,10 +1,13 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
+    @Autowired // Uses reflection
+    @Qualifier("happyFortuneService")
     private FortuneService fortuneService;
 
 //    @Autowired
@@ -22,8 +25,8 @@ public class TennisCoach implements Coach {
         return fortuneService.getFortune();
     }
 
-    @Autowired
-    public void setFortuneService(FortuneService fortuneService) {
-        this.fortuneService = fortuneService;
-    }
+//    @Autowired
+//    public void setFortuneService(FortuneService fortuneService) {
+//        this.fortuneService = fortuneService;
+//    }
 }
