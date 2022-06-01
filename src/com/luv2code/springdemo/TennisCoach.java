@@ -1,14 +1,16 @@
 package com.luv2code.springdemo;
 
+import com.luv2code.springdemo.services.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component
+@ComponentScan
 public class TennisCoach implements Coach {
     @Autowired // Uses reflection
     @Qualifier("randomFortuneService")
@@ -36,9 +38,4 @@ public class TennisCoach implements Coach {
     public String getDailyFortune() {
         return fortuneService.getFortune();
     }
-
-//    @Autowired
-//    public void setFortuneService(FortuneService fortuneService) {
-//        this.fortuneService = fortuneService;
-//    }
 }
