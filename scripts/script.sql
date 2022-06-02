@@ -1,0 +1,1 @@
+ALTER TABLE hb_student_tracker.student AUTO_INCREMENT=3000

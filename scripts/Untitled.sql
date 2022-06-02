@@ -1,0 +1,1 @@
+truncate hb_student_tracker.student
