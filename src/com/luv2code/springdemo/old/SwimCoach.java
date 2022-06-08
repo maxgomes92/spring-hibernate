@@ -1,8 +1,7 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.old;
 
 import com.luv2code.springdemo.services.FortuneService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 
 
 public class SwimCoach implements Coach {

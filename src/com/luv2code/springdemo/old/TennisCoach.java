@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.old;
 
 import com.luv2code.springdemo.services.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
