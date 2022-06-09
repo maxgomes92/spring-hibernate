@@ -43,13 +43,17 @@ public class Instructor {
 
     @Override
     public String toString() {
-        return "Instructor{" +
+        var msg = "Instructor{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", instructorDetail=" + instructorDetail +
                 '}';
+
+        System.out.println(msg);
+
+        return msg;
     }
 
     public int getId() {

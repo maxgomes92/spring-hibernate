@@ -1,31 +1,21 @@
 package com.luv2code.springdemo;
 
-import com.luv2code.springdemo.entity.Instructor;
-import com.luv2code.springdemo.entity.InstructorDetail;
-import com.luv2code.springdemo.entity.Student;
-import org.hibernate.cfg.Configuration;
+import com.luv2code.springdemo.services.SessionService;
 
 public class CreateDemo {
     public static void main (String[] args) {
-        var factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Instructor.class)
-                .addAnnotatedClass(InstructorDetail.class)
-                .buildSessionFactory();
+        var sessionService = new SessionService();
 
         try {
-            var session = factory.getCurrentSession();
+//            sessionService.createInstructorWithDetails("Max", "Gomes", "max@email.com", "/maxgomes92", "coding");
+            var toDelete = sessionService.getInstructorById(1);
+            toDelete.toString();
 
-            var tempInstructor = new Instructor("Chad", "Darby", "darby@email.com");
-            var tempInstructorDetail = new InstructorDetail("https://youtube.com/darby", "coding");
-
-            tempInstructor.setInstructorDetail(tempInstructorDetail);
-
-            session.beginTransaction();
-            session.save(tempInstructor);
-            session.getTransaction().commit();
+            sessionService.deleteInstructor(toDelete);
+        } catch (Exception err) {
+            System.out.println("Error!!! " + err.toString());
         } finally {
-            factory.close();
+            sessionService.close();
         }
     }
 }
