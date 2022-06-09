@@ -1,8 +1,8 @@
-DROP SCHEMA IF EXISTS `hb-03-one-to-many`;
+DROP SCHEMA IF EXISTS `hb-01-one-to-one-uni`;
 
-CREATE SCHEMA `hb-03-one-to-many`;
+CREATE SCHEMA `hb-01-one-to-one-uni`;
 
-use `hb-03-one-to-many`;
+use `hb-01-one-to-one-uni`;
 
 SET FOREIGN_KEY_CHECKS = 0;
 
