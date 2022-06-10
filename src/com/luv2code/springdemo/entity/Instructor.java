@@ -3,6 +3,7 @@ package com.luv2code.springdemo.entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,6 +33,7 @@ public class Instructor {
 
     @OneToMany(
         mappedBy = "instructor",
+        fetch = FetchType.LAZY,
         cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}
     )
     private List<Course> courses;

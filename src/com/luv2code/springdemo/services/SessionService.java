@@ -70,6 +70,19 @@ public class SessionService {
         System.out.println("Instructor id " + id + " deleted successfully.");
     }
 
+    public void deleteCourseById (Integer id) {
+        var course = session.get(Course.class, id);
+
+        if (course == null) {
+            System.out.println("Course id " + id + " not found. Aborting deletion.");
+            return;
+        }
+
+        session.delete(course);
+
+        System.out.println("Course id " + id + " deleted successfully.");
+    }
+
     public void deleteInstructorDetailById (Integer id) {
         var instructorDetail = session.get(InstructorDetail.class, id);
 

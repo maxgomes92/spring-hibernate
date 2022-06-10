@@ -1,6 +1,7 @@
 package com.luv2code.springdemo;
 
 import com.luv2code.springdemo.services.SessionService;
+import org.hibernate.internal.build.AllowSysOut;
 
 public class CreateDemo {
     public static void main (String[] args) {
@@ -15,10 +16,12 @@ public class CreateDemo {
 //            var course = sessionService.createCourse("Truco");
 
 //            Course
-            var course = sessionService.getCourseById(10);
-            var instructor = sessionService.getInstructorById(1);
-            instructor.add(course);
-            sessionService.save(instructor);
+//            var course = sessionService.getCourseById(12);
+//            var instructor = sessionService.getInstructorById(1);
+//            instructor.add(course);
+//            sessionService.save(instructor);
+
+//            sessionService.deleteCourseById(10);
         } catch (Exception err) {
             System.out.println("Error!!! " + err);
         } finally {
